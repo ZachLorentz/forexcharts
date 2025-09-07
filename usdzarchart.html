@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.65">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Load Google Charts library --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script type="text/javascript"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// Load the corechart package and set callback</p>
+<p class="p1"><span class="Apple-converted-space">      </span>google.charts.load('current', {'packages':['corechart']});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>google.charts.setOnLoadCallback(drawChart);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function drawChart() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Prepare DataTable with Date, Rate, and tooltip</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var data = new google.visualization.DataTable();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>data.addColumn('string', 'Date');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>data.addColumn('number', 'USD/ZAR');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>data.addColumn({type: 'string', role: 'tooltip'});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>data.addRows([</p>
+<p class="p1"><span class="Apple-converted-space">          </span>['8 Feb 2025',<span class="Apple-converted-space">  </span>18.4153, '8 Feb 2025: 18.4153'],</p>
+<p class="p1"><span class="Apple-converted-space">          </span>['9 Feb 2025',<span class="Apple-converted-space">  </span>18.5303, '9 Feb 2025: 18.5303'],</p>
+<p class="p1"><span class="Apple-converted-space">          </span>['10 Feb 2025', 18.4519, '10 Feb 2025: 18.4519'],</p>
+<p class="p1"><span class="Apple-converted-space">          </span>['11 Feb 2025', 18.5090, '11 Feb 2025: 18.5090'],</p>
+<p class="p1"><span class="Apple-converted-space">          </span>['12 Feb 2025', 18.5282, '12 Feb 2025: 18.5282'],</p>
+<p class="p1"><span class="Apple-converted-space">          </span>['13 Feb 2025', 18.4964, '13 Feb 2025: 18.4964'],</p>
+<p class="p1"><span class="Apple-converted-space">          </span>['14 Feb 2025', 18.3732, '14 Feb 2025: 18.3732'],</p>
+<p class="p1"><span class="Apple-converted-space">          </span>['15 Feb 2025', 18.3718, '15 Feb 2025: 18.3718'],</p>
+<p class="p1"><span class="Apple-converted-space">          </span>['16 Feb 2025', 18.3702, '16 Feb 2025: 18.3702']</p>
+<p class="p1"><span class="Apple-converted-space">        </span>]);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Chart options: clean layout, no legend, with axis titles</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var options = {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>title: 'USD to ZAR (8–16 Feb 2025)',</p>
+<p class="p1"><span class="Apple-converted-space">          </span>hAxis: { title: 'Date' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>vAxis: { title: 'USD/ZAR Rate' },</p>
+<p class="p1"><span class="Apple-converted-space">          </span>legend: 'none'</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Draw the line chart in the target div</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var chart = new google.visualization.LineChart(document.getElementById('chart_div'));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>chart.draw(data, options);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Chart will be rendered here --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="chart_div" style="width:700px; height:400px;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
